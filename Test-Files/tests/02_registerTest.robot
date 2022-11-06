@@ -32,10 +32,3 @@ Register by filling every field but without firstname
     check if first name field is empty
     
 
-
-
-
-#Register without password
-#    Create Account  someaddress@provider.com
-#    ${errorMessage}=  Get Create Account Error Message
-#    Should Contain  ${errorMessage}  Please enter an account password

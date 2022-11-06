@@ -18,19 +18,6 @@ Go To Signin Page
     click button    ${SIGNIN_BUTTON}
 
 
-#Open Movie Card
-#    Wait Until Element Is Visible    ${MOVIE_CARD}
-#    click element    ${MOVIE_CARD}
-#    Execute javascript  document.body.style.zoom="70%"
-#    sleep    5s
-#    click button    //div[@class='css-ce9ngx']//button[@id='CloseModal']
-#    switch window    xpath://*[@id="root"]/div/div[2]/div[1]/div[2]
-#    WAIT UNTIL ELEMENT IS VISIBLE    ${MORE_INFO_LINK}
-#    click link    ${MORE_INFO_LINK}
-#    Wait Until Element Is Visible    ${RENT_MOVIE_BUTTON}
-#    click element    ${RENT_MOVIE_BUTTON}
-#    wait until element is visible    ${MOVIE_VIDEO}
-#    click element    ${movie_video}
 
 
 Go To Profile Page
