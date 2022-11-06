@@ -7,8 +7,8 @@ ${MOVIE_CARD}=              xpath://div[@id='Comedy Movies']//img[@id='551804']
 ${RENT_MOVIE_BUTTON}=       xpath://button[@id='RentMovieButton']
 ${MOVIE_VIDEO}=             xpath://*[@id="movie_player"]/div[1]/video
 ${MORE_INFO_LINK}=          xpath://*[@id="root"]/div/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[2]/a
-${PROFILE_BUTTON}=          xpath://a[@href='#/profile']//button[@id='OrdersPageButton']
-
+${PROFILE_BUTTON}=          xpath:(//button[normalize-space()='Profile'])[1]
+${SignOut_Button}=          xpath:(//button[normalize-space()='Sign out'])[1]
 
 *** Keywords ***
 Go To Signin Page
@@ -18,14 +18,15 @@ Go To Signin Page
     click button    ${SIGNIN_BUTTON}
 
 
-Open Movie Card
-    Wait Until Element Is Visible    ${MOVIE_CARD}
-    click element    ${MOVIE_CARD}
-    Execute javascript  document.body.style.zoom="70%"
-    sleep    5s
-    switch window    xpath://*[@id="root"]/div/div[2]/div[1]/div[2]
-    WAIT UNTIL ELEMENT IS VISIBLE    ${MORE_INFO_LINK}
-    click link    ${MORE_INFO_LINK}
+#Open Movie Card
+#    Wait Until Element Is Visible    ${MOVIE_CARD}
+#    click element    ${MOVIE_CARD}
+#    Execute javascript  document.body.style.zoom="70%"
+#    sleep    5s
+#    click button    //div[@class='css-ce9ngx']//button[@id='CloseModal']
+#    switch window    xpath://*[@id="root"]/div/div[2]/div[1]/div[2]
+#    WAIT UNTIL ELEMENT IS VISIBLE    ${MORE_INFO_LINK}
+#    click link    ${MORE_INFO_LINK}
 #    Wait Until Element Is Visible    ${RENT_MOVIE_BUTTON}
 #    click element    ${RENT_MOVIE_BUTTON}
 #    wait until element is visible    ${MOVIE_VIDEO}
@@ -33,4 +34,9 @@ Open Movie Card
 
 
 Go To Profile Page
-    click button   ${profile_button}
+    wait until element is visible    ${profile_button}
+    click button   ${PROFILE_BUTTON}
+
+Click On Sign Out Button
+    wait until element is visible    ${signout_button}
+    click button    ${SignOut_Button}

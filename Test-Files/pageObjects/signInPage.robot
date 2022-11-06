@@ -8,6 +8,9 @@ ${LOGIN_BTN}=             xpath://button[@id='SignInButtonComplete']
 ${Go_To_Register}=        id:GoToRegister
 
 
+${LOGIN_ERROR_MESSAGE}=    xpath:(//code[normalize-space()='Email or password incorrect.'])[1]
+
+
 *** Keywords ***
 
 
@@ -25,5 +28,9 @@ Go to create acount page from sign in page
     click link    ${go_to_register}
 
 
+Get Login Error Message
+    Wait Until Element Is Visible  ${login_error_message}
+    ${text}=  Get Text  ${login_error_message}
+    [Return]  ${text}
 
 

@@ -10,18 +10,14 @@ ${Re_Password_Txt}=              id:RegisterRePassword
 ${Register_Button}=              id:RegisterButtonComplete
 
 
-${First_Name}=                   asdsadasfadsf
-${Last_Name}=                    sadwqefwefs
-${email}=                        fwewwqewe@gmail.com
-${password}=                     mehmetasd
-
 *** Keywords ***
 
 
 Fill the register fields
+       [Arguments]  ${First_Name}=${EMPTY}  ${Last_Name}=${EMPTY}  ${email}=${EMPTY}  ${password}=${EMPTY}
        WAIT UNTIL ELEMENT IS VISIBLE    ${first_name_txt}
-       Input Text       ${First_Name_Txt}       ${first_name}
-       Input Text       ${last_name_txt}        ${last_name}
+       Input Text       ${First_Name_Txt}       ${First_Name}
+       Input Text       ${last_name_txt}        ${Last_Name}
        input text       ${email_txt}            ${email}
        Input Text       ${password_txt}         ${password}
        Input Text       ${re_password_txt}      ${password}

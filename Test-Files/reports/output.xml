@@ -1,125 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20221105 12:38:34.059" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.10.7 on win32)" generated="20221106 13:20:42.327" rpa="false" schemaversion="3">
 <suite id="s1" name="01 signinTest" source="C:\testing-thomasmore\my-Btube-testing\Test-Files\tests\01_signinTest.robot">
 <kw name="Open My Website" library="basePage" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221105 12:38:34.278" level="INFO">Opening browser 'Google Chrome' to base url 'https://brightshopapp.herokuapp.com/#/'.</msg>
-<status status="PASS" starttime="20221105 12:38:34.278" endtime="20221105 12:38:35.977"/>
+<msg timestamp="20221106 13:20:42.581" level="INFO">Opening browser 'Google Chrome' to base url 'https://brightshopapp.herokuapp.com/#/'.</msg>
+<msg timestamp="20221106 13:20:45.984" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20221106 13:20:45.984" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 105
+Current browser version is 107.0.5304.88 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0099DF13+2219795]
+	Ordinal0 [0x00932841+1779777]
+	Ordinal0 [0x0084423D+803389]
+	Ordinal0 [0x008664AC+943276]
+	Ordinal0 [0x008619F0+924144]
+	Ordinal0 [0x0085F179+913785]
+	Ordinal0 [0x008936B9+1128121]
+	Ordinal0 [0x0089331A+1127194]
+	Ordinal0 [0x0088E616+1107478]
+	Ordinal0 [0x00867F89+950153]
+	Ordinal0 [0x00868F56+954198]
+	GetHandleVerifier [0x00C92CB2+3040210]
+	GetHandleVerifier [0x00C82BB4+2974420]
+	GetHandleVerifier [0x00A36A0A+565546]
+	GetHandleVerifier [0x00A35680+560544]
+	Ordinal0 [0x00939A5C+1808988]
+	Ordinal0 [0x0093E3A8+1827752]
+	Ordinal0 [0x0093E495+1827989]
+	Ordinal0 [0x009480A4+1867940]
+	BaseThreadInitThunk [0x77456739+25]
+	RtlGetFullPathName_UEx [0x77808FD2+1218]
+	RtlGetFullPathName_UEx [0x77808F9D+1165]
+</msg>
+<status status="FAIL" starttime="20221106 13:20:42.581" endtime="20221106 13:20:46.043"/>
 </kw>
-<status status="PASS" starttime="20221105 12:38:34.278" endtime="20221105 12:38:35.977"/>
+<status status="FAIL" starttime="20221106 13:20:42.581" endtime="20221106 13:20:46.043"/>
 </kw>
-<test id="s1-t1" name="Sign In With Existing Account" line="11">
-<kw name="Go To Signin Page" library="homePage" type="SETUP">
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221105 12:38:35.979" endtime="20221105 12:38:36.103"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221105 12:38:46.118" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20221105 12:38:36.103" endtime="20221105 12:38:46.118"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${SIGNIN_BUTTON}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221105 12:38:46.118" endtime="20221105 12:38:46.156"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${SIGNIN_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20221105 12:38:46.157" level="INFO">Clicking button 'id:SignInButton'.</msg>
-<status status="PASS" starttime="20221105 12:38:46.157" endtime="20221105 12:38:46.221"/>
-</kw>
-<status status="PASS" starttime="20221105 12:38:35.978" endtime="20221105 12:38:46.221"/>
-</kw>
-<kw name="Log In With Account" library="signInPage">
-<arg>mehmetdurna0011@gmail.com</arg>
-<arg>yunus033</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${EMAIL_LOGIN_TXT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221105 12:38:46.222" endtime="20221105 12:38:46.241"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${EMAIL_LOGIN_TXT}</arg>
-<arg>${emailaddress}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221105 12:38:46.242" level="INFO">Typing text 'mehmetdurna0011@gmail.com' into text field 'id:SignInEmail'.</msg>
-<status status="PASS" starttime="20221105 12:38:46.241" endtime="20221105 12:38:46.328"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${PASSWORD_LOGIN_TXT}</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221105 12:38:46.329" level="INFO">Typing text 'yunus033' into text field 'id:SignInPassword'.</msg>
-<status status="PASS" starttime="20221105 12:38:46.329" endtime="20221105 12:38:46.395"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LOGIN_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221105 12:38:46.396" level="INFO">Clicking element 'xpath://button[@id='SignInButtonComplete']'.</msg>
-<status status="PASS" starttime="20221105 12:38:46.395" endtime="20221105 12:38:46.494"/>
-</kw>
-<status status="PASS" starttime="20221105 12:38:46.221" endtime="20221105 12:38:46.495"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221105 12:38:51.499" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20221105 12:38:46.495" endtime="20221105 12:38:51.499"/>
-</kw>
-<kw name="Go To Profile Page" library="homePage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${profile_button}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20221105 12:38:51.500" level="INFO">Clicking button 'xpath://a[@href='#/profile']//button[@id='OrdersPageButton']'.</msg>
-<status status="PASS" starttime="20221105 12:38:51.500" endtime="20221105 12:38:51.551"/>
-</kw>
-<status status="PASS" starttime="20221105 12:38:51.499" endtime="20221105 12:38:51.552"/>
-</kw>
-<kw name="Get Email Adress Of Account" library="profilePage">
-<var>${emailAdress}</var>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ACCOUNT_EMAIL}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221105 12:38:51.552" endtime="20221105 12:38:51.775"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${text}</var>
-<arg>${ACCOUNT_EMAIL}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221105 12:38:51.787" level="INFO">${text} = mehmetdurna0011@gmail.com</msg>
-<status status="PASS" starttime="20221105 12:38:51.775" endtime="20221105 12:38:51.788"/>
-</kw>
-<msg timestamp="20221105 12:38:51.788" level="INFO">${emailAdress} = mehmetdurna0011@gmail.com</msg>
-<status status="PASS" starttime="20221105 12:38:51.552" endtime="20221105 12:38:51.788"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${emailAdress}</arg>
-<arg>mehmetdurna0011@gmail.com</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20221105 12:38:51.788" endtime="20221105 12:38:51.788"/>
-</kw>
-<status status="PASS" starttime="20221105 12:38:35.978" endtime="20221105 12:38:51.789"/>
+<test id="s1-t1" name="Log In With Correct Email and Password" line="12">
+<status status="FAIL" starttime="20221106 13:20:46.043" endtime="20221106 13:20:46.044">Parent suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 105
+Current browser version is 107.0.5304.88 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0099DF13+2219795]
+	Ordinal0 [0x00932841+1779777]
+	Ordinal0 [0x0084423D+803389]
+	Ordinal0 [0x008664AC+943276]
+	Ordinal0 [0x008619F0+924144]
+	Ordinal0 [0x0085F179+913785]
+	Ordinal0 [0x008936B9+1128121]
+	Ordinal0 [0x0089331A+1127194]
+	Ordinal0 [0x0088E616+1107478]
+	Ordinal0 [0x00867F89+950153]
+	Ordinal0 [0x00868F56+954198]
+	GetHandleVerifier [0x00C92CB2+3040210]
+	GetHandleVerifier [0x00C82BB4+2974420]
+	GetHandleVerifier [0x00A36A0A+565546]
+	GetHandleVerifier [0x00A35680+560544]
+	Ordinal0 [0x00939A5C+1808988]
+	Ordinal0 [0x0093E3A8+1827752]
+	Ordinal0 [0x0093E495+1827989]
+	Ordinal0 [0x009480A4+1867940]
+	BaseThreadInitThunk [0x77456739+25]
+	RtlGetFullPathName_UEx [0x77808FD2+1218]
+	RtlGetFullPathName_UEx [0x77808F9D+1165]
+</status>
+</test>
+<test id="s1-t2" name="Log In With Correct Email and Wrong Password" line="19">
+<status status="FAIL" starttime="20221106 13:20:46.046" endtime="20221106 13:20:46.046">Parent suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 105
+Current browser version is 107.0.5304.88 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0099DF13+2219795]
+	Ordinal0 [0x00932841+1779777]
+	Ordinal0 [0x0084423D+803389]
+	Ordinal0 [0x008664AC+943276]
+	Ordinal0 [0x008619F0+924144]
+	Ordinal0 [0x0085F179+913785]
+	Ordinal0 [0x008936B9+1128121]
+	Ordinal0 [0x0089331A+1127194]
+	Ordinal0 [0x0088E616+1107478]
+	Ordinal0 [0x00867F89+950153]
+	Ordinal0 [0x00868F56+954198]
+	GetHandleVerifier [0x00C92CB2+3040210]
+	GetHandleVerifier [0x00C82BB4+2974420]
+	GetHandleVerifier [0x00A36A0A+565546]
+	GetHandleVerifier [0x00A35680+560544]
+	Ordinal0 [0x00939A5C+1808988]
+	Ordinal0 [0x0093E3A8+1827752]
+	Ordinal0 [0x0093E495+1827989]
+	Ordinal0 [0x009480A4+1867940]
+	BaseThreadInitThunk [0x77456739+25]
+	RtlGetFullPathName_UEx [0x77808FD2+1218]
+	RtlGetFullPathName_UEx [0x77808F9D+1165]
+</status>
+</test>
+<test id="s1-t3" name="Check the User Information Which Is In My Profile Page" line="26">
+<status status="FAIL" starttime="20221106 13:20:46.049" endtime="20221106 13:20:46.049">Parent suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 105
+Current browser version is 107.0.5304.88 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0099DF13+2219795]
+	Ordinal0 [0x00932841+1779777]
+	Ordinal0 [0x0084423D+803389]
+	Ordinal0 [0x008664AC+943276]
+	Ordinal0 [0x008619F0+924144]
+	Ordinal0 [0x0085F179+913785]
+	Ordinal0 [0x008936B9+1128121]
+	Ordinal0 [0x0089331A+1127194]
+	Ordinal0 [0x0088E616+1107478]
+	Ordinal0 [0x00867F89+950153]
+	Ordinal0 [0x00868F56+954198]
+	GetHandleVerifier [0x00C92CB2+3040210]
+	GetHandleVerifier [0x00C82BB4+2974420]
+	GetHandleVerifier [0x00A36A0A+565546]
+	GetHandleVerifier [0x00A35680+560544]
+	Ordinal0 [0x00939A5C+1808988]
+	Ordinal0 [0x0093E3A8+1827752]
+	Ordinal0 [0x0093E495+1827989]
+	Ordinal0 [0x009480A4+1867940]
+	BaseThreadInitThunk [0x77456739+25]
+	RtlGetFullPathName_UEx [0x77808FD2+1218]
+	RtlGetFullPathName_UEx [0x77808F9D+1165]
+</status>
 </test>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221105 12:38:51.790" endtime="20221105 12:38:53.885"/>
+<status status="PASS" starttime="20221106 13:20:46.052" endtime="20221106 13:20:46.052"/>
 </kw>
-<status status="PASS" starttime="20221105 12:38:34.060" endtime="20221105 12:38:53.885"/>
+<status status="FAIL" starttime="20221106 13:20:42.328" endtime="20221106 13:20:46.052">Suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 105
+Current browser version is 107.0.5304.88 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0099DF13+2219795]
+	Ordinal0 [0x00932841+1779777]
+	Ordinal0 [0x0084423D+803389]
+	Ordinal0 [0x008664AC+943276]
+	Ordinal0 [0x008619F0+924144]
+	Ordinal0 [0x0085F179+913785]
+	Ordinal0 [0x008936B9+1128121]
+	Ordinal0 [0x0089331A+1127194]
+	Ordinal0 [0x0088E616+1107478]
+	Ordinal0 [0x00867F89+950153]
+	Ordinal0 [0x00868F56+954198]
+	GetHandleVerifier [0x00C92CB2+3040210]
+	GetHandleVerifier [0x00C82BB4+2974420]
+	GetHandleVerifier [0x00A36A0A+565546]
+	GetHandleVerifier [0x00A35680+560544]
+	Ordinal0 [0x00939A5C+1808988]
+	Ordinal0 [0x0093E3A8+1827752]
+	Ordinal0 [0x0093E495+1827989]
+	Ordinal0 [0x009480A4+1867940]
+	BaseThreadInitThunk [0x77456739+25]
+	RtlGetFullPathName_UEx [0x77808FD2+1218]
+	RtlGetFullPathName_UEx [0x77808F9D+1165]
+</status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="01 signinTest">01 signinTest</stat>
+<stat pass="0" fail="3" skip="0" id="s1" name="01 signinTest">01 signinTest</stat>
 </suite>
 </statistics>
 <errors>
